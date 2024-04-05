@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/logo.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created for your Target"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- <link rel="stylesheet" href="../style/style.css"> -->
+    <title>Nima Road-Map</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+   
+  </head>
+  <body>
+    <div id="container">
+      
+      <div id="left">
+          <h1>Road-Map-1</h1>
+          <br>
+          <input type="search" id="search-roadmap-1" placeholder="search...">
+          <ol>  
+             <!-- 
+              <li>
+                  <label for="1">HTMsssssssssssssL </label> / <label for="2">CSS</label>
+                  <div class="checkbox-container">
+                    <button class="delete">Delete</button>
+                    <input type="checkbox" name="" id="1">
+                  </div>
+              </li>
+           
+              <li>
+                  <label for="3">Responsive </label>/ <label for="4">Flex Box </label>/ <label for="5">Grid</label> 
+                  <div class="checkbox-container">
+                      <input type="checkbox" name="" id="3">
+                      <input type="checkbox" name="" id="4">
+                      <input type="checkbox" name="" id="5">
+                  </div>
+              </li>
+              <li>
+                  <label for="6">Tailwind </label>/ <label for="7">Bootstrap </label>/ <label for="8"> Framer Motion</label> 
+                  <div class="checkbox-container">
+                      <input type="checkbox" name="" id="6">
+                      <input type="checkbox" name="" id="7">
+                      <input type="checkbox" name="" id="8">
+                  </div>
+              </li>
+              <li>
+                  <label for="9">SCSS </label>/ <label for="10"> Git </label>/ <label for="11">Sass</label> / <label for="12">Clean Code </label>
+                  <div class="checkbox-container">
+                      <input type="checkbox" name="" id="9">
+                      <input type="checkbox" name="" id="10">
+                      <input type="checkbox" name="" id="11">
+                      <input type="checkbox" name="" id="12">
+                  </div>
+              </li>
+              <li>
+                  <label for="13">TypeScript</label> / <label for="14">JavaScript </label>
+                  <div class="checkbox-container">
+                      <input type="checkbox" name="" id="13">
+                      <input type="checkbox" name="" id="14">
+                  </div>
+              </li>
+              <li>
+                  <label for="15">Three.Js</label> / <label for="16">Gsap </label>/<label for="17">Open Graph</label>
+                  <div class="checkbox-container">
+                      <input type="checkbox" name="" id="15">
+                      <input type="checkbox" name="" id="16">
+                      <input type="checkbox" name="" id="17">
+                  </div>
+              </li>
+              <li>
+                  <label for="18">jQuery  اختیاری</label>
+                  <div class="checkbox-container">
+                      <input type="checkbox" name="" id="18">
+                  </div>
+              </li>
+              <li>
+                  <label for="19">React.Js </label>/ <label for="20">Next.JS </label>/ <label for="21"> Context </label>/ <label for="22">Redux</label>
+                  <div class="checkbox-container">
+                      <input type="checkbox" name="" id="19">
+                      <input type="checkbox" name="" id="20">
+                      <input type="checkbox" name="" id="21">
+                      <input type="checkbox" name="" id="22">
+                  </div>
+              </li>
+              <li>
+                  <label for="23">Electron.Js</label>
+                  <div class="checkbox-container">
+                      <input type="checkbox" name="" id="23">
+                  </div>
+              </li>
+              <li>
+                  <label for="24">React Native اختیاری</label>
+                  <div class="checkbox-container">
+                      <input type="checkbox" name="" id="24">
+                  </div>
+              </li> -->
+          </ol>
+      </div>
+      <div id="right">
+          <h1>Road-Map-2</h1>
+          <br>
+          <input type="search" id="search-roadmap-2" placeholder="search...">
+          <ol>
+              <!-- <li>
+                  <label for="b1">PHP</label>
+                  <div class="checkbox-container">
+                      <input type="checkbox" name="" id="b1">
+                  </div>
+              </li>
+              <li>
+                  <label for="b2">Node.Js</label>/<label for="b3">Express.Js</label>
+                  <div class="checkbox-container">
+                      <input type="checkbox" name="" id="b2">
+                      <input type="checkbox" name="" id="b3">
+                  </div>
+              </li>
+              <li>
+                  <label for="b4">PostgreSQL</label>
+                  <div class="checkbox-container">
+                      <input type="checkbox" name="" id="b4">
+                  </div>
+              </li>
+              <li>
+                  <label for="b5">MongoDB</label>
+                  <div class="checkbox-container">
+                      <input type="checkbox" name="" id="b5">
+                  </div>
+              </li>
+              <li>
+                  <label for="b6">MySQL</label>
+                  <div class="checkbox-container">
+                      <input type="checkbox" name="" id="b6">
+                  </div>
+              </li>
+              <li>
+                  <label for="b7">SQL Server</label>
+                  <div class="checkbox-container">
+                      <input type="checkbox" name="" id="b7">
+                  </div>
+              </li> -->
+          </ol>
+      </div>
+  </div>
+  <div style=" text-align: center; width: 100%;">
+    <button id="add2" style="margin-bottom: 50px; width: 90% ;">Add</button>
+  </div>
+
+  <form method="post" id="root">
+  </form>
+
+
+  <script>
+    let checkArray = [];
+    const left = document.getElementById('left');
+    const right = document.getElementById('right');
+
+    document.addEventListener('DOMContentLoaded',()=>{
+      let c = 1;
+      let g = 1;
+
+      if(localStorage.getItem('front') != null){
+
+        frontArray = localStorage.getItem('front').split(',');
+        
+        for(let item of frontArray){
+          const child = document.createElement('li');
+          document.querySelector('#left ol').appendChild(child).innerHTML = `
+                  <label for="${c}">${item}</label>
+                    <div class="checkbox-container">
+                      <button class="delete">Delete</button>
+                      <input type="checkbox" id="${c}">
+                  </div>
+          `
+          c++;
+        }
+      }
+
+      if(localStorage.getItem('back') != null){
+        backArray = localStorage.getItem('back').split(',');
+        for(let item of backArray){
+          const child = document.createElement('li');
+          document.querySelector('#right ol').appendChild(child).innerHTML = `
+                  <label for="b${g}">${item}</label>
+                    <div class="checkbox-container">
+                      <button class="delete">Delete</button>
+                      <input type="checkbox" id="b${g}">
+                  </div>
+          `
+          g++;
+        }
+      }
+
+      setTimeout(()=>{
+        if(localStorage.getItem('checked') != null){
+        checkArray = localStorage.getItem('checked').split(',');
+        for(let item of checkArray){
+          document.getElementById(item).checked = true;
+        }
+      }
+      },2000)
+
+    })
+
+
+    left.addEventListener('click',(e)=>{
+      if(e.target.type == 'checkbox'){
+        if(e.target.checked !== true){
+          remove(e.target.id)
+        }
+        else{
+          add(e.target.id)
+        }
+      }
+    })
+
+
+    right.addEventListener('click',(e)=>{
+      if(e.target.type == 'checkbox'){
+
+        if(e.target.checked !== true){
+          remove(e.target.id)
+        }
+        else{
+          add(e.target.id)
+        }
+      }
+    })
+
+    function add(id){
+      checkArray.push(id)
+      localStorage.setItem('checked',checkArray)
+    }
+    function remove(id){
+        checkArray.splice(checkArray.indexOf(id),1);
+        localStorage.setItem('checked',checkArray);
+        if(localStorage.getItem('checked') == ''){
+          localStorage.removeItem('checked')
+        }
+    }
+  </script>
+  <script>
+    let showModal = true;
+    const addShow = document.getElementById('add2')
+    addShow.addEventListener('click',()=>{
+      if(showModal){
+        document.getElementById('root').style.display = 'block';
+        document.querySelector('.App').style.animation = 'fadeIn .5s ease-in-out 1';
+        addShow.style.animation = 'fadeInBtn .5s ease-in-out 1';
+
+
+        setTimeout(()=>{
+          document.getElementById('root').style.display = 'block';
+          addShow.style.display = 'none';
+        },500)
+        showModal = false;
+      }else{
+        document.querySelector('.App').style.animation = 'fadeOut .5s ease-in-out 1';
+        addShow.style.animation = 'fadeOutBtn .5s ease-in-out 1';
+
+
+        setTimeout(()=>{
+          document.getElementById('root').style.display = 'none';
+          addShow.style.display = 'inline-block';
+        },500)
+        showModal = true;
+      }
+    })
+
+    window.addEventListener('click',(e)=>{
+      if(e.target.id == 'root'){
+        document.querySelector('.App').style.animation = 'fadeOut .5s ease-in-out 1';
+        addShow.style.animation = 'fadeOutBtn .5s ease-in-out 1';
+
+
+        setTimeout(()=>{
+          document.getElementById('root').style.display = 'none';
+          addShow.style.display = 'inline-block';
+        },500)
+        showModal = true;
+      }
+    })
+  </script>
+   <script>
+    const roadMap1Search = document.getElementById('search-roadmap-1')
+    roadMap1Search.addEventListener('keyup',()=>{
+
+      const roadMap1 = document.querySelector('#left ol');
+
+      for(let item of roadMap1.children){
+        if(item.firstElementChild.textContent.indexOf(roadMap1Search.value) !== -1){
+          item.style.display = 'block';
+        }
+        else{
+          item.style.display = 'none';
+        }
+      }
+    })
+
+    const roadMap2Search = document.getElementById('search-roadmap-2')
+    roadMap2Search.addEventListener('keyup',()=>{
+
+      const roadMap2 = document.querySelector('#right ol');
+
+      for(let item of roadMap2.children){
+        if(item.firstElementChild.textContent.indexOf(roadMap2Search.value) !== -1){
+          item.style.display = 'block';
+        }
+        else{
+          item.style.display = 'none';
+        }
+      }
+    })
+  </script>
+  <script>
+    const deleteBtn = document.querySelectorAll('.delete')
+    window.addEventListener('click',(e)=>{
+      if(e.target.className == 'delete'){
+
+        if(checkArray.indexOf(e.target.parentElement.lastElementChild.id) != -1){
+          remove(e.target.parentElement.lastElementChild.id)
+        }
+       
+
+        if(e.target.parentElement.parentElement.parentElement.parentElement.id === "left"){
+    
+          frontArray = localStorage.getItem('front').split(',')
+          frontArray.splice(frontArray.indexOf(e.target.parentElement.parentElement.firstElementChild.textContent),1)
+
+          localStorage.setItem('front',frontArray)
+
+          if(localStorage.getItem('front') == ''){
+            localStorage.removeItem('front')
+          }
+        }
+        if(e.target.parentElement.parentElement.parentElement.parentElement.id === "right"){
+
+          backArray = localStorage.getItem('back').split(',')
+          backArray.splice(backArray.indexOf(e.target.parentElement.parentElement.firstElementChild.textContent),1)
+          localStorage.setItem('back',backArray)
+
+          if(localStorage.getItem('back') == ''){
+            localStorage.removeItem('back')
+          }
+
+        }
+        e.target.parentElement.parentElement.remove()
+      }
+    })
+  </script>
+  </body>
+</html>
