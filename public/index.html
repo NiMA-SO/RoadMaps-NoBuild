@@ -17,6 +17,19 @@
    
   </head>
   <body>
+    <div id="NameContainer">
+      <div id="roadMapName">
+        <label for="">RoadMap-1 : </label>
+        <input type="text" name="" id="road1Name">
+        <br>
+        <br>
+        <label for="">RoadMap-2 : </label>
+        <input type="text" name="" id="road2Name">
+        <br>
+        <br>
+        <button id="btnName">Save</button>
+      </div>
+    </div>
     <div id="container">
       
       <div id="left">
@@ -154,16 +167,31 @@
   <form method="post" id="root">
   </form>
 
-
+  <script>
+    window.addEventListener('click',(e)=>{
+      if(e.target.id == 'NameContainer'){
+        window.close()
+      }
+    })
+  </script>
   <script>
     let checkArray = [];
     const left = document.getElementById('left');
     const right = document.getElementById('right');
-
+    const leftH1 = document.querySelector('#left').firstElementChild;
+    const rightH1 = document.querySelector('#right').firstElementChild;
+    let roadmapNameArray=[];
     document.addEventListener('DOMContentLoaded',()=>{
       let c = 1;
       let g = 1;
 
+   
+      if(localStorage.getItem('roadmapName')){
+        NameContainer.style.display = "none";
+        roadmapNameArray = localStorage.getItem('roadmapName').split(',')
+        leftH1.textContent = roadmapNameArray[0]
+        rightH1.textContent = roadmapNameArray[1]
+      }
       if(localStorage.getItem('front') != null){
 
         frontArray = localStorage.getItem('front').split(',');
@@ -353,5 +381,6 @@
       }
     })
   </script>
+
   </body>
 </html>

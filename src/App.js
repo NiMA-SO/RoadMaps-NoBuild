@@ -15,6 +15,24 @@ function App() {
 
   let i = frontArray.length;
   let b = backArray.length;
+  const btnName = document.getElementById('btnName');
+  const road1Name = document.getElementById('road1Name')
+  const road2Name = document.getElementById('road2Name')
+  const leftH1 = document.querySelector('#left').firstElementChild;
+  const rightH1 = document.querySelector('#right').firstElementChild;
+  const NameContainer = document.getElementById('NameContainer')
+
+  btnName.addEventListener('click',()=>{
+    if(road1Name.value != '' && road2Name.value != ''){
+      leftH1.textContent = road1Name.value;
+      rightH1.textContent = road2Name.value;
+      NameContainer.style.display = "none";
+
+      localStorage.setItem('roadmapName',leftH1.textContent+","+rightH1.textContent)
+    }else{
+      alert('همه فیلد ها باید پر شوند')
+    }
+  })
 
   return (
     <div className="App">
@@ -22,11 +40,11 @@ function App() {
       <br/>
       <br/>
       <input type='checkbox' id="checkFront"/>
-      <label for='checkFront'>  Road Map 1</label>
+      <label for='checkFront' id='lbl1'> RoadMap-Left</label>
       <br/>
       <br/>
       <input type='checkbox' id="checkBack"/>
-      <label for='checkBack'>  Road Map 2</label>
+      <label for='checkBack' id='lbl2'> RoadMap-Right</label>
       <br/>
       <br/>
       <button id='btnAdd' type='button' onClick={()=>{
@@ -74,6 +92,7 @@ function App() {
           backArray.push(addText)
           localStorage.setItem('back',backArray)
         }
+        // addText.value = '';
       }}>Add</button>
     </div>
   );
